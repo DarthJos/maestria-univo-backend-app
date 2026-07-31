@@ -9,7 +9,10 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // Permitir todas las rutas de nuestra API
-                .allowedOrigins("http://localhost:4200")    // Permitir solo a nuestro Angular
+                .allowedOrigins(
+                        "http://localhost:4200",    // Permitir solo a nuestro Angular
+                        "https://maestria-univo-frontend-app.vercel.app"
+                )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*");
     }
